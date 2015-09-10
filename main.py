@@ -21,13 +21,15 @@ coin_list = pygame.sprite.Group()
 meteor_list = pygame.sprite.Group()
 missile_list = pygame.sprite.Group()
 
-backgroundImageOne = pygame.image.load("background.png")
+background_image_path = "assets/background.png"
+
+backgroundImageOne = pygame.image.load(background_image_path)
 backgroundImageOne_position = [0, 0]
 
-backgroundImageTwo = pygame.image.load("background.png")
+backgroundImageTwo = pygame.image.load(background_image_path)
 backgroundImageTwo_position = [0, -560]
 
-player = Rocket("rocket.png", 320, 390)
+player = Rocket("assets/rocket.png", 320, 390)
 all_sprites.add(player)
 
 score = 0
@@ -48,7 +50,7 @@ while not game_over:
                 player.move(2)
 
             if event.key == pygame.K_SPACE:
-                missile = Missile("missile.png", player.rect.x+22, player.rect.y-35)
+                missile = Missile("assets/missile.png", player.rect.x+22, player.rect.y-35)
                 missile_list.add(missile)
                 all_sprites.add(missile)
 
@@ -69,7 +71,7 @@ while not game_over:
 
         for i in range(random.randrange(3,6)):
 
-            meteor = Meteor("meteor.png", random.randrange(1,5))
+            meteor = Meteor("assets/meteor.png", random.randrange(1,5))
             meteor.rect.x = random.randint(55,585)
             meteor.rect.y = random.randint(-400,-70)
             meteor_list.add(meteor)
@@ -79,7 +81,7 @@ while not game_over:
 
         for i in range(random.randrange(1,4)):
 
-            coin = Coin("coin.png")
+            coin = Coin("assets/coin.png")
             coin.rect.x = random.randint(55, 585)
             coin.rect.y = random.randint(-100,-70)
 
