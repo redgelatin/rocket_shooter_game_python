@@ -88,6 +88,7 @@ class Missile(pygame.sprite.Sprite):
 class Meteor(pygame.sprite.Sprite):
 
     def __init__(self, filename, speed):
+
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load(filename).convert()
         self.image.set_colorkey(YELLOW)

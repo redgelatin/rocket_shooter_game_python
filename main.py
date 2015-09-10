@@ -9,7 +9,7 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
-from Classes import *
+from classes import *
 import random
 
 game_over = False
