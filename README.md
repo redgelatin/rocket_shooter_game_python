@@ -8,5 +8,7 @@ my free time as I learn how to use Github. Feel free to contribute in any way yo
 ## References
 The classes and main loop are based off code found on: http://programarcadegames.com/
 
-If any issues arise from altering the code, just remember the code is based of code found on the above website.
 Music is from Jacob LaVallee, owner of http://uncopyrightedmusic.net
+
+If any issues arise from altering the code, just remember the code is based of code found on the above website.
+
