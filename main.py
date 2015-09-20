@@ -54,10 +54,12 @@ while not game_over:
             elif event.key == pygame.K_RIGHT:
                 player.move(2)
 
-            if event.key == pygame.K_SPACE:
+            if event.key == pygame.K_SPACE and player.ammo > 0:
+                player.ammo -= 1
                 missile = Missile("assets/missile.png", player.rect.x+22, player.rect.y-35)
                 missile_list.add(missile)
                 all_sprites.add(missile)
+
 
         elif event.type == pygame.KEYUP:
 
@@ -141,6 +143,10 @@ while not game_over:
 
     player.healthBar()
 
+    if player.ammo < 10:
+        player.ammo += 0.01
+
+    player.shotsFired()
 
     display_score = font.render(str(score), 1, WHITE)
     screen.blit(display_score, (5, 5))

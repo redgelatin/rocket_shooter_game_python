@@ -19,6 +19,7 @@ GREEN    = (   0, 255,  31 )
 RED      = (  255,  0,   0 )
 BLUE     = (    0,  0, 255 )
 DARKBLUE = (    7,  0,  63 )
+LIGHTBLUE= (  130, 255, 252)
 YELLOW   = ( 245, 255,  68 )
 
 screen_size = (700, 500)
@@ -33,6 +34,7 @@ class Rocket(pygame.sprite.Sprite):
     health = 10
     change_x = 0
     score = 0
+    ammo = 10
 
     def __init__(self, filename, x, y):
 
@@ -46,13 +48,17 @@ class Rocket(pygame.sprite.Sprite):
         self.rect.y = y
 
     def healthBar(self):
-
         pygame.draw.rect(screen, RED, [self.rect.x + 5, self.rect.y + 90, 50, 5])
         if self.health >= 0:
             pygame.draw.rect(screen, GREEN, [self.rect.x + 5, self.rect.y + 90, 5 * self.health, 5])
 
     def loseHealth(self, hit):
         self.health -= hit
+
+    def shotsFired(self):
+        pygame.draw.rect(screen, RED, [self.rect.x + 5, self.rect.y + 100, 50, 5])
+        if self.ammo >= 0:
+            pygame.draw.rect(screen, LIGHTBLUE, [self.rect.x + 5, self.rect.y + 100, 5 * self.ammo, 5])
 
     def move(self, movement_x):
         self.change_x += movement_x
