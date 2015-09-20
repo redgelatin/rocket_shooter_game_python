@@ -29,6 +29,10 @@ backgroundImageOne_position = [0, 0]
 backgroundImageTwo = pygame.image.load(background_image_path)
 backgroundImageTwo_position = [0, -560]
 
+#Shoutout to Jacob LaVallee, owner of http://uncopyrightedmusic.net
+background_music_path = "assets/background_music.ogg"
+background_music = pygame.mixer.Sound(background_music_path)
+
 player = Rocket("assets/rocket.png", 320, 390)
 all_sprites.add(player)
 
@@ -37,6 +41,7 @@ font = pygame.font.SysFont("monospace", 40)
 
 # Game Loop
 while not game_over:
+    background_music.play()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             game_over = True
