@@ -7,10 +7,9 @@ my free time as I learn how to use Github. Feel free to contribute in any way yo
 
 ##Enhancements
 These are things that should be added to improve the game:
-
-Main Menu
-
-Power-ups
+* Main Menu
+* Power-ups
+* Accurate hitboxes
 
 ## References
 The classes and main loop are based off code found on: http://programarcadegames.com/
